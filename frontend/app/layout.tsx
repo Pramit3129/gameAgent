@@ -1,4 +1,4 @@
-import { Public_Sans } from 'next/font/google';
+import { Public_Sans, Libre_Caslon_Display } from 'next/font/google';
 import localFont from 'next/font/local';
 import { headers } from 'next/headers';
 import { ApplyThemeScript, ThemeToggle } from '@/components/app/theme-toggle';
@@ -8,6 +8,12 @@ import '@/styles/globals.css';
 const publicSans = Public_Sans({
   variable: '--font-public-sans',
   subsets: ['latin'],
+});
+
+const libreCaslonDisplay = Libre_Caslon_Display({
+  variable: '--font-libre-caslon-display',
+  subsets: ['latin'],
+  weight: '400',
 });
 
 const commitMono = localFont({
@@ -54,6 +60,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       className={cn(
         publicSans.variable,
         commitMono.variable,
+        libreCaslonDisplay.variable,
         'scroll-smooth font-sans antialiased'
       )}
     >
